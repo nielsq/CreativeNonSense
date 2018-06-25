@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 1ef9531aeb679934b97e733dda57f7f7
+guid: 86f6007c6f8ce754f8f6e1538e938b65
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    400000: default
-    400002: //RootNode
-    2100000: fox_material
-    2300000: default
-    3300000: default
-    4300000: default
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cone
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -30,7 +27,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 1
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
