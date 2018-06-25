@@ -1,7 +1,0 @@
-22.06.2018/22:03
-Low Poly Fox: https://clara.io/view/1a03ac6b-d6b5-4c2d-9f1a-c80068311396
-Low Poly Tree: https://www.turbosquid.com/3d-models/sample-trees-c4d-free/1008420
-
-23.06.2018/23:40
-Camera Follow: https://code.tutsplus.com/tutorials/unity3d-third-person-cameras--mobile-11230
-Ground Floor Texture: https://catlikecoding.com/unity/tutorials/procedural-grid/01-uv-texture.png
