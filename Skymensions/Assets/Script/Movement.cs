@@ -10,11 +10,12 @@ public class Movement : MonoBehaviour
     public float speed = 1.0f;
     public bool doubleJump = true;
     public float updates = 0.5f;
+    public Vector3 JumpVector = new Vector3(0.0f, 7.0f, 0.0f);
 
     private bool pressJump = true;
     private bool JumpCoolDown = false;
     private bool IsGrounded;
-    private Vector3 JumpVector = new Vector3(0.0f, 7.0f, 0.0f);
+    
     float tempTime;
 
     // Use this for initialization

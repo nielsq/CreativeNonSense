@@ -1,10 +1,11 @@
 fileFormatVersion: 2
-guid: 86f6007c6f8ce754f8f6e1538e938b65
+guid: 5c96ef0bc1f90604c85e38a7858161a3
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+    2100000: Material.001
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cone
