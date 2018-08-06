@@ -1,14 +1,53 @@
 fileFormatVersion: 2
-guid: 5c96ef0bc1f90604c85e38a7858161a3
+guid: 41abf2b95028e2d44ae14b487d4f0a97
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: Material.001
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cone
+    100000: BackPack
+    100002: BackpackStra
+    100004: Belt
+    100006: Hair
+    100008: Knife
+    100010: LowerBody
+    100012: //RootNode
+    100014: UpperBody
+    400000: BackPack
+    400002: BackpackStra
+    400004: Belt
+    400006: Hair
+    400008: Knife
+    400010: LowerBody
+    400012: //RootNode
+    400014: UpperBody
+    2100000: Handle.BR.00
+    2100002: Belt.BR
+    2100004: Backpack.BR
+    2100006: PackpackLatc
+    2100008: Handle.BR.00.000
+    2100010: Metal.BR
+    2100012: Rags.BR
+    2100014: Skin.BR
+    2300000: BackPack
+    2300002: BackpackStra
+    2300004: Belt
+    2300006: Hair
+    2300008: Knife
+    2300010: LowerBody
+    2300012: UpperBody
+    3300000: BackPack
+    3300002: BackpackStra
+    3300004: Belt
+    3300006: Hair
+    3300008: Knife
+    3300010: LowerBody
+    3300012: UpperBody
+    4300000: UpperBody
+    4300002: Hair
+    4300004: BackpackStra
+    4300006: BackPack
+    4300008: Belt
+    4300010: LowerBody
+    4300012: Knife
   externalObjects: {}
   materials:
     importMaterials: 1
