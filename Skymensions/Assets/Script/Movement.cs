@@ -15,7 +15,12 @@ public class Movement : MonoBehaviour
     private bool pressJump = true;
     private bool JumpCoolDown = false;
     private bool IsGrounded;
-    
+
+    private Vector3 inputRotation;
+    private Vector3 mousePlacement;
+    private Vector3 screenCentre;
+
+
     float tempTime;
 
     // Use this for initialization
@@ -27,6 +32,14 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.rotation = Quaternion.LookRotation(inputRotation);
+        screenCentre = new Vector3(Screen.width * 0.5f, 0, Screen.height * 0.5f);
+        mousePlacement = Input.mousePosition;
+        mousePlacement.z = mousePlacement.y;
+        mousePlacement.y = 0;
+        inputRotation = mousePlacement - screenCentre;
+
+
 
         //bewegung mit WASD
         if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))

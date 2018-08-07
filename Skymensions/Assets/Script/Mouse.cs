@@ -17,6 +17,6 @@ public class Mouse : MonoBehaviour {
     void Update()
     {
         transform.position = target.transform.position -  offset;
-       // transform.LookAt(target.transform);
+       //transform.LookAt(target.transform);
     }
 }
