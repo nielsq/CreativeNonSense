@@ -151,14 +151,14 @@ public class Movement : MonoBehaviour
     {
         IsGrounded = true;
         JumpCoolDown = false;
-        Debug.Log("isGrounded");
+
 
     }
 
     void OnCollisionExit(Collision collisionInfo)
     {
         IsGrounded = false;
-        Debug.Log("not");
+
     }
 
 
