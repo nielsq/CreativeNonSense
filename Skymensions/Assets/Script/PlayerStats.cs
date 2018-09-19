@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour {
 
+
+
     //Anfangswerte
     private int playerBaseHP = 10;
     private int playerBaseATK = 2;
     private int playerBaseArmor = 0;
 
     //Aktualisierte Werte
-    private int playerCurrentHP;
+    public int playerCurrentHP;
     private int playerMaxHP;
     private int playerCurrentATK;
     private int playerCurrentArmor;
@@ -59,7 +61,7 @@ public class PlayerStats : MonoBehaviour {
         hpText.text = "Hitpoints: " + playerCurrentHP;
     }
 
-    void NewArmor (int armor)
+    public void NewArmor (int armor)
     {
         playerCurrentArmor = playerBaseArmor + armor;
         armorText.text = "Armor: " + playerCurrentArmor;
