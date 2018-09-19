@@ -26,7 +26,8 @@ public class Movement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-       // Cursor.visible = false;
+        // Cursor.visible = false;
+        this.name = "spieler";
 
     }
     
