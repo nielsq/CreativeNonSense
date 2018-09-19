@@ -22,6 +22,9 @@ public class KI : MonoBehaviour {
     bool notStuckX = true;
     bool notStuckZ = true;
 
+    bool links;
+    bool rechts;
+
     // Use this for initialization
     void Start () {
     
@@ -181,15 +184,38 @@ public class KI : MonoBehaviour {
 
         this.transform.Translate(0.0f, 0.0f, -0.1f * speed);
 
+        //check ob rechts oder links lieber
+       
+
     }
 
     void WeStockBoisZ()
     {
         Debug.Log("Z");
-        if (notStuckX) {
-            this.transform.Translate(0.1f * speed, 0.0f, 0.0f);
+
+
+
+        if (links || this.transform.position.x > spieler.transform.position.x)
+        {
+            if (notStuckX)
+            {
+                links = true;
+                this.transform.Translate(-0.1f * speed, 0.0f, 0.0f);
+            }
+
+
         }
-        
+        else if (rechts || this.transform.position.x < spieler.transform.position.x)
+        {
+
+            if (notStuckX)
+            {
+                rechts = true;
+                this.transform.Translate(0.1f * speed, 0.0f, 0.0f);
+            }
+
+        }
+
 
     }
 
