@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23371191259259080}
   - component: {fileID: 114407515729526408}
   m_Layer: 0
-  m_Name: Swoard
+  m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,3 +105,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab39afa3c1ff8a4d8d2496fa747f8b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spieler: {fileID: 0}

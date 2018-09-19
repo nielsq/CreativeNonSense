@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23212818219129488}
   - component: {fileID: 114998546830644356}
   m_Layer: 0
-  m_Name: Amor
+  m_Name: Armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
