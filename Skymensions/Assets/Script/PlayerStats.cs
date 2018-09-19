@@ -73,4 +73,26 @@ public class PlayerStats : MonoBehaviour {
         playerCurrentATK = playerBaseATK + swordATK;
         atkText.text = "Attack: " + playerCurrentATK;
     }
+
+
+
+    void OnCollisionEnter(Collision col)
+    {
+
+
+        if (col.gameObject.name == "Armor")
+        {
+            Debug.Log("Armor");
+            Destroy(GameObject.Find("Armor"));
+            NewArmor(1);
+        }
+
+        if (col.gameObject.name == "Sword")
+        {
+            Debug.Log("Schwert");
+            Destroy(GameObject.Find("Sword"));
+            NewSword(1);
+        }
+
+    }
 }

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Swoard : MonoBehaviour {
+public class Sword : MonoBehaviour {
 
     public GameObject spieler;
     // Use this for initialization
     void Start () {
-		
-	}
+        this.name = "Sword";
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -16,13 +16,7 @@ public class Swoard : MonoBehaviour {
     }
 
 
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.name == "spieler")
-        {
-            Destroy(this.gameObject);
-        }
-    }
+
 
 
 }

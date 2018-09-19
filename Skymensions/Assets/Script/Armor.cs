@@ -6,7 +6,7 @@ public class Armor : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        this.name = "Armor";
 	}
 	
 	// Update is called once per frame
@@ -16,13 +16,5 @@ public class Armor : MonoBehaviour {
 
     }
 
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.name == "spieler")
-        {
-            Destroy(this.gameObject);
-
-        }
-    }
 
 }

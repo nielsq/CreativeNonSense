@@ -18,20 +18,21 @@ public class EnemyStats : MonoBehaviour
 
     // Use this for initialization
     void Start () {
-
+        spawnArmor();
+        spawnSwoard();
     }
 	
 	// Update is called once per frame
 	void Update () {
 
         if (enemyBaseHP <= 0) {
-            spawnAmor();
+            spawnArmor();
             spawnSwoard();
         }
 		
 	}
 
-    void spawnAmor()
+    void spawnArmor()
     {
         Vector3 pos = new Vector3(this.transform.position.x -1 , 6.0f, this.transform.position.z -1);
         Instantiate(Armor, pos, Quaternion.identity);
