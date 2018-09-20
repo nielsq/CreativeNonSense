@@ -7,7 +7,7 @@ public class Armor : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        this.name = "Armor";
+        this.name = "ArmorDrop";
 	}
 	
 	// Update is called once per frame

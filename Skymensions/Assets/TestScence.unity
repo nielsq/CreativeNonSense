@@ -1233,6 +1233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 759923806}
   enemy: {fileID: 0}
+  firstStart: 1
   Armor: {fileID: 1124471411893594, guid: bdff2d6712e274741a813bf536aa4500, type: 2}
   Swoard: {fileID: 1223136459667318, guid: 518dbaffb298d414e8057e919fdae94c, type: 2}
 --- !u!1 &811604789
@@ -2515,6 +2516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 759923806}
   enemy: {fileID: 0}
+  firstStart: 1
   Armor: {fileID: 1124471411893594, guid: bdff2d6712e274741a813bf536aa4500, type: 2}
   Swoard: {fileID: 1223136459667318, guid: 518dbaffb298d414e8057e919fdae94c, type: 2}
 --- !u!114 &2132439034

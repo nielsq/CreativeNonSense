@@ -109,10 +109,10 @@ public class PlayerStats : MonoBehaviour {
     {
 
 
-        if (col.gameObject.name == "Armor")
+        if (col.gameObject.name == "ArmorDrop")
         {
-            Debug.Log("Armor");
-            Destroy(GameObject.Find("Armor"));
+            Debug.Log("ArmorDrop");
+            Destroy(GameObject.Find("ArmorDrop"));
             NewArmor(Random.Range(1, 30));
         }
 

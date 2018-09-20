@@ -154,7 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  enemy: {fileID: 0}
+  enemy: {fileID: 1890230901881742}
+  firstStart: 1
   Armor: {fileID: 1124471411893594, guid: bdff2d6712e274741a813bf536aa4500, type: 2}
   Swoard: {fileID: 1223136459667318, guid: 518dbaffb298d414e8057e919fdae94c, type: 2}
 --- !u!135 &135286980570237014

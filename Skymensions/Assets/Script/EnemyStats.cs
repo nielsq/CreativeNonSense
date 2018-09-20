@@ -26,7 +26,7 @@ public class EnemyStats : MonoBehaviour
     // Use this for initialization
     void Start () {
         enemyCurrentHP = enemyBaseHP;
-        //enemy = GameObject.Find("Gegner");
+        enemy = GameObject.Find("Gegner");
         
     }
 	

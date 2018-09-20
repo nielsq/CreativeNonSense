@@ -108,4 +108,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93194e2cb4f077748a2c7bd279e7cba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ArmorDrop: {fileID: 0}
+  ArmorDrop: {fileID: 1124471411893594}
