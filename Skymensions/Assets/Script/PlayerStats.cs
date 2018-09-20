@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour {
 
+    private Scene scene;
     public GameObject enemy;
+    private GameObject spieler;
     public int abstand = 4;
+    EnemyStats es;
     //Anfangswerte
     private int playerBaseHP = 10;
     private int playerBaseATK = 2;
@@ -22,11 +26,15 @@ public class PlayerStats : MonoBehaviour {
     public Text hpText;
     public Text atkText;
     public Text armorText;
+    
 
 
 
     // Use this for initialization
     void Start () {
+
+        scene = SceneManager.GetActiveScene();
+
         playerCurrentHP = playerBaseHP;
         playerMaxHP = playerBaseHP;
         playerCurrentATK = playerBaseATK;
@@ -36,14 +44,17 @@ public class PlayerStats : MonoBehaviour {
         atkText.text = "Attack: " + playerBaseATK;
         armorText.text = "Armor: " + playerBaseArmor;
 
+        enemy = GameObject.Find("Gegner");
+        spieler = GameObject.Find("Player");
+        es = GetComponent<EnemyStats>();
     }
 
     // Update is called once per frame
     void Update () {
-        if (enemy.transform.position.x - this.transform.position.x >= -abstand && enemy.transform.position.x - this.transform.position.x <= abstand)
+        if (enemy.transform.position.x - spieler.transform.position.x >= -abstand && enemy.transform.position.x - spieler.transform.position.x <= abstand)
         {
 
-            if (enemy.transform.position.z - this.transform.position.z >= -abstand && enemy.transform.position.z - this.transform.position.z <= abstand)
+            if (enemy.transform.position.z - spieler.transform.position.z >= -abstand && enemy.transform.position.z - spieler.transform.position.z <= abstand)
             {
                 TakeDMG(1);
             }
@@ -55,21 +66,19 @@ public class PlayerStats : MonoBehaviour {
             TakeDMG(1);
         }
 
-        //TEST -> funktioniert
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            es.EnemyTakeDMG(playerCurrentATK);
+        }
+
+        //TEST 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            NewArmor(Random.Range(1,30));
+            es.spawnArmor();
+            //NewArmor(Random.Range(1,30));
         }
 
     }
-
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Gegner")
-        {
-            
-        }
-    }*/
 
     void TakeDMG (int dmg)
     {
@@ -77,8 +86,10 @@ public class PlayerStats : MonoBehaviour {
         //Evtl noch Lifebar Update
         hpText.text = "Hitpoints: " + playerCurrentHP;
         //Knockback
-        Vector3 direction = (this.transform.position - enemy.transform.position).normalized;
-        this.GetComponent<Rigidbody>().AddForce(direction * 50, ForceMode.Impulse);
+        Vector3 direction = (spieler.transform.position - enemy.transform.position).normalized;
+        spieler.GetComponent<Rigidbody>().AddForce(direction * 50, ForceMode.Impulse);
+        //Neustart wenn weniger als Null HP
+        if (playerCurrentHP <= 0) Application.LoadLevel(scene.name);
     }
 
     void NewArmor (int armor)
@@ -98,17 +109,21 @@ public class PlayerStats : MonoBehaviour {
     {
 
 
-        if (col.gameObject.name == "Armor")
+        if (col.gameObject.name == "ArmorDrop")
         {
-            Debug.Log("Armor");
-            Destroy(GameObject.Find("Armor"));
-            NewArmor(1);
+            Debug.Log("ArmorDrop");
+            Destroy(GameObject.Find("ArmorDrop"));
+            NewArmor(Random.Range(1, 30));
         }
         else if(col.gameObject.name == "Sword"){
 
             Debug.Log("Schwert");
             Destroy(GameObject.Find("Sword"));
+
             NewSword(1);
+
+
+            NewSword(Random.Range(1, 10));
 
         }
 
