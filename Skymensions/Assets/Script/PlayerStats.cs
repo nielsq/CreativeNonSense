@@ -104,13 +104,15 @@ public class PlayerStats : MonoBehaviour {
             Destroy(GameObject.Find("Armor"));
             NewArmor(1);
         }
+        else if(col.gameObject.name == "Sword"){
 
-        if (col.gameObject.name == "Sword")
-        {
             Debug.Log("Schwert");
             Destroy(GameObject.Find("Sword"));
             NewSword(1);
+
         }
+
+
 
     }
 }

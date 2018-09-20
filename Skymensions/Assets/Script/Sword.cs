@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour {
 
-    public GameObject spieler;
     // Use this for initialization
     void Start () {
         this.name = "Sword";
@@ -14,9 +13,6 @@ public class Sword : MonoBehaviour {
 	void Update () {
         transform.Rotate(0, -2, 0);
     }
-
-
-
 
 
 }
