@@ -1087,6 +1087,7 @@ GameObject:
   - component: {fileID: 759923807}
   - component: {fileID: 759923808}
   - component: {fileID: 759923814}
+  - component: {fileID: 759923815}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1219,6 +1220,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f18b22a9f8f829b40b4c99309e0b8df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &759923815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 759923806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b7cde8205542bd4a8f19e123416f19f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 759923806}
+  enemy: {fileID: 0}
+  Armor: {fileID: 1124471411893594, guid: bdff2d6712e274741a813bf536aa4500, type: 2}
+  Swoard: {fileID: 1223136459667318, guid: 518dbaffb298d414e8057e919fdae94c, type: 2}
 --- !u!1 &811604789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,6 +2513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7cde8205542bd4a8f19e123416f19f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 759923806}
+  enemy: {fileID: 0}
   Armor: {fileID: 1124471411893594, guid: bdff2d6712e274741a813bf536aa4500, type: 2}
   Swoard: {fileID: 1223136459667318, guid: 518dbaffb298d414e8057e919fdae94c, type: 2}
 --- !u!114 &2132439034
