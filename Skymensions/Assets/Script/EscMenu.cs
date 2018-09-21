@@ -9,9 +9,11 @@ public class EscMenu : MonoBehaviour {
     public static bool GameIsPaused = false;
 
     public GameObject escMenuUI;
-	
-	// Update is called once per frame
-	void Update () {
+
+    public GameObject enemy;
+    public GameObject Player;
+    // Update is called once per frame
+    void Update () {
 		if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(GameIsPaused)
@@ -26,6 +28,12 @@ public class EscMenu : MonoBehaviour {
 
    public void Resume()
     {
+        enemy = GameObject.Find("Gegner");
+        //Player = GameObject.Find("Player");
+        enemy.GetComponent<KI>().speed = 1.1f;
+        Debug.Log(enemy.GetComponent<KI>().speed);
+
+        Player.GetComponent<Movement>().speed = 0.3f;
         escMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -33,6 +41,12 @@ public class EscMenu : MonoBehaviour {
 
     void Pause()
     {
+        enemy = GameObject.Find("Gegner");
+        //Player = GameObject.Find("Player");
+        enemy.GetComponent<KI>().speed = 0.0f;
+        Debug.Log(enemy.GetComponent<KI>().speed);
+
+        Player.GetComponent<Movement>().speed = 0.0f;
         escMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
@@ -40,12 +54,18 @@ public class EscMenu : MonoBehaviour {
 
     public void LoadMenu()
     {
+        enemy = GameObject.Find("Gegner");
+        enemy.GetComponent<KI>().speed = 1.1f;
+        Player.GetComponent<Movement>().speed = 0.3f;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
 
     public void QuitGame()
     {
+        enemy = GameObject.Find("Gegner");
+        enemy.GetComponent<KI>().speed = 1.1f;
+        Player.GetComponent<Movement>().speed = 0.3f;
         Debug.Log("Quit Game");
         Application.Quit();
      

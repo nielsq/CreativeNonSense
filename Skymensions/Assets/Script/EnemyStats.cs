@@ -13,9 +13,11 @@ public class EnemyStats : MonoBehaviour
     private int enemyBaseATK = 1;
     private int enemyBaseArmor = 0;
 
-    private int enemyCurrentHP;
+    public int enemyCurrentHP;
     private int enemyCurrentATK;
     private int enemyCurrentArmor;
+
+    private bool dead = false;
 
     public GameObject Armor;
     public GameObject Swoard;
