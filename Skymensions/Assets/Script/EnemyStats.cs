@@ -6,7 +6,6 @@ public class EnemyStats : MonoBehaviour
 {
     public GameObject player;
     public GameObject enemy;
-    public bool firstStart = true;
     
     //Anfangswerte
     private int enemyBaseHP = 4;
@@ -28,7 +27,8 @@ public class EnemyStats : MonoBehaviour
     // Use this for initialization
     void Start () {
         enemyCurrentHP = enemyBaseHP;
-        enemy = GameObject.Find("Gegner");
+        enemy = GameObject.FindGameObjectWithTag("Gegner");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 	
 	// Update is called once per frame
@@ -41,10 +41,7 @@ public class EnemyStats : MonoBehaviour
             EnemyTakeDMG(1);
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            SpawnEnemy();
-        }
+        
 
     }
 
@@ -62,6 +59,7 @@ public class EnemyStats : MonoBehaviour
 
     public void EnemyTakeDMG(int dmg)
     {
+        Debug.Log("ASIDBIUBGIBERGIHBWGIHBEGHI");
         enemyCurrentHP -= dmg;
         //Evtl noch Lifebar Update
         //Knockback
@@ -75,11 +73,6 @@ public class EnemyStats : MonoBehaviour
         }
     }
 
-    void SpawnEnemy()
-    {
-        Vector3 pos = new Vector3(-3, 7.55f, 23.4f);
-        enemy = (GameObject)Instantiate(enemy, pos, Quaternion.identity);
-    }
 
 
 

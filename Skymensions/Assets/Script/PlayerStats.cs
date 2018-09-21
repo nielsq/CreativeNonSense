@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerStats : MonoBehaviour {
+public class PlayerStats : MonoBehaviour
+{
 
     private Scene scene;
     public GameObject enemy;
@@ -13,7 +14,7 @@ public class PlayerStats : MonoBehaviour {
     EnemyStats es;
     //Anfangswerte
     private int playerBaseHP = 10;
-    private int playerBaseATK = 2;
+    private int playerBaseATK = 1;
     private int playerBaseArmor = 0;
 
     //Aktualisierte Werte
@@ -26,12 +27,13 @@ public class PlayerStats : MonoBehaviour {
     public Text hpText;
     public Text atkText;
     public Text armorText;
-    
+
 
 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
 
         scene = SceneManager.GetActiveScene();
 
@@ -44,13 +46,14 @@ public class PlayerStats : MonoBehaviour {
         atkText.text = "Attack: " + playerBaseATK;
         armorText.text = "Armor: " + playerBaseArmor;
 
-        enemy = GameObject.Find("Gegner");
-        spieler = GameObject.Find("Player");
-        es = GetComponent<EnemyStats>();
+        enemy = GameObject.FindGameObjectWithTag("Gegner");
+        spieler = GameObject.FindGameObjectWithTag("Player");
+        es = enemy.GetComponent<EnemyStats>();
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         if (enemy.transform.position.x - spieler.transform.position.x >= -abstand && enemy.transform.position.x - spieler.transform.position.x <= abstand)
         {
 
@@ -60,7 +63,12 @@ public class PlayerStats : MonoBehaviour {
             }
         }
 
-                //TEST -> funktioniert
+        if (Input.GetMouseButtonDown(0))
+        {
+            Attacking();
+        }
+
+        //TEST -> funktioniert
         if (Input.GetKeyDown(KeyCode.F))
         {
             TakeDMG(1);
@@ -68,6 +76,7 @@ public class PlayerStats : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.X))
         {
+            Debug.Log("Warum 2 mal");
             es.EnemyTakeDMG(playerCurrentATK);
         }
 
@@ -80,19 +89,20 @@ public class PlayerStats : MonoBehaviour {
 
     }
 
-    void TakeDMG (int dmg)
+    void TakeDMG(int dmg)
     {
+        Debug.Log("PLAYERDMG");
         playerCurrentHP -= dmg;
         //Evtl noch Lifebar Update
         hpText.text = "Hitpoints: " + playerCurrentHP;
         //Knockback
         Vector3 direction = (spieler.transform.position - enemy.transform.position).normalized;
-        spieler.GetComponent<Rigidbody>().AddForce(direction * 50, ForceMode.Impulse);
+        spieler.GetComponent<Rigidbody>().AddForce(direction * 30, ForceMode.Impulse);
         //Neustart wenn weniger als Null HP
         if (playerCurrentHP <= 0) Application.LoadLevel(scene.name);
     }
 
-    void NewArmor (int armor)
+    void NewArmor(int armor)
     {
         playerCurrentArmor = playerBaseArmor + armor;
         armorText.text = "Armor: " + playerCurrentArmor;
@@ -104,8 +114,8 @@ public class PlayerStats : MonoBehaviour {
         playerCurrentATK = playerBaseATK + swordATK;
         atkText.text = "Attack: " + playerCurrentATK;
     }
-	
-	void OnCollisionEnter(Collision col)
+
+    void OnCollisionEnter(Collision col)
     {
 
 
@@ -115,19 +125,17 @@ public class PlayerStats : MonoBehaviour {
             Destroy(GameObject.Find("ArmorDrop"));
             NewArmor(Random.Range(1, 30));
         }
-        else if(col.gameObject.name == "Sword"){
+        else if (col.gameObject.name == "Sword")
+        {
 
             Debug.Log("Schwert");
             Destroy(GameObject.Find("Sword"));
-
-            NewSword(1);
-
-
             NewSword(Random.Range(1, 10));
-
         }
+    }
 
-
-
+    void Attacking()
+    {
+        Debug.Log("Geht in Attacking");        
     }
 }
