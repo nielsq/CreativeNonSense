@@ -1,0 +1,131 @@
+fileFormatVersion: 2
+guid: 41abf2b95028e2d44ae14b487d4f0a97
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: BackPack
+    100002: BackpackStra
+    100004: Belt
+    100006: Hair
+    100008: Knife
+    100010: LowerBody
+    100012: //RootNode
+    100014: UpperBody
+    400000: BackPack
+    400002: BackpackStra
+    400004: Belt
+    400006: Hair
+    400008: Knife
+    400010: LowerBody
+    400012: //RootNode
+    400014: UpperBody
+    2100000: Handle.BR.00
+    2100002: Belt.BR
+    2100004: Backpack.BR
+    2100006: PackpackLatc
+    2100008: Handle.BR.00.000
+    2100010: Metal.BR
+    2100012: Rags.BR
+    2100014: Skin.BR
+    2300000: BackPack
+    2300002: BackpackStra
+    2300004: Belt
+    2300006: Hair
+    2300008: Knife
+    2300010: LowerBody
+    2300012: UpperBody
+    3300000: BackPack
+    3300002: BackpackStra
+    3300004: Belt
+    3300006: Hair
+    3300008: Knife
+    3300010: LowerBody
+    3300012: UpperBody
+    4300000: UpperBody
+    4300002: Hair
+    4300004: BackpackStra
+    4300006: BackPack
+    4300008: Belt
+    4300010: LowerBody
+    4300012: Knife
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -27,8 +27,8 @@ public class KI : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
-        spieler = GameObject.FindGameObjectWithTag("Player");
+    
+		
 	}
 	
 	// Update is called once per frame

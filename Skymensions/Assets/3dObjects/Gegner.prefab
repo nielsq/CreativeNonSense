@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 193ddb98353dbd647bec3577971fa150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spieler: {fileID: 1635096848986278, guid: 881e2954063c3bb4f8e7ffa87cbf5bf5, type: 2}
+  spieler: {fileID: 0}
   abstand: 4
   follow: 1
   speed: 1.1
@@ -153,9 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7cde8205542bd4a8f19e123416f19f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1635096848986278, guid: 881e2954063c3bb4f8e7ffa87cbf5bf5, type: 2}
+  player: {fileID: 0}
   enemy: {fileID: 1890230901881742}
-  enemyCurrentHP: 0
+  firstStart: 1
   Armor: {fileID: 1124471411893594, guid: bdff2d6712e274741a813bf536aa4500, type: 2}
   Swoard: {fileID: 1223136459667318, guid: 518dbaffb298d414e8057e919fdae94c, type: 2}
 --- !u!135 &135286980570237014

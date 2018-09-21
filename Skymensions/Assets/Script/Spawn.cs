@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawn : MonoBehaviour {
-
+    
     //Initialisierungen
-    public GameObject enemy;
     public GameObject tree;
     public GameObject rock;
     public GameObject wall;
     public float posYTree = 7.94f;
     public float posYRock = 3.8f;
     public float posYWall = 7.77f;
-    public int enemyCounter = 0;
 
     // Use this for initialization
     void Start () {
@@ -37,25 +35,12 @@ public class Spawn : MonoBehaviour {
             spawnWall();
         }
 
-        spawnEnemy();
-        enemy.tag = "Gegner";
-
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            spawnEnemy();
-        }
-    }
 
-    void spawnEnemy()
-    {
-        Vector3 pos = new Vector3(-3, 7.55f, 23.4f);
-        enemy = (GameObject)Instantiate(enemy, pos, Quaternion.identity);
-        enemyCounter++;
-    }
+	}
 
     //Baeume an einer Random Position (auf der Flaeche) spawnen
     void spawnTree()
