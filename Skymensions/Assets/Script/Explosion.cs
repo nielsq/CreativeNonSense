@@ -26,7 +26,7 @@ public class Explosion : MonoBehaviour
         if(other.tag == "Player")
         {
             
-                Invoke("Detonate", 1);
+                Invoke("Detonate", 3);
             
         }
     }

@@ -4,17 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerStats : MonoBehaviour {
+public class PlayerStats : MonoBehaviour
+{
 
     private Scene scene;
     public GameObject enemy;
-    public GameObject Gate;
     private GameObject spieler;
     public int abstand = 4;
     EnemyStats es;
     //Anfangswerte
     private int playerBaseHP = 10;
-    private int playerBaseATK = 2;
+    private int playerBaseATK = 1;
     private int playerBaseArmor = 0;
 
     //Aktualisierte Werte
@@ -28,11 +28,12 @@ public class PlayerStats : MonoBehaviour {
     public Text atkText;
     public Text armorText;
 
-    private float posYGate = 7.94f;
+
 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
 
         scene = SceneManager.GetActiveScene();
 
@@ -45,13 +46,14 @@ public class PlayerStats : MonoBehaviour {
         atkText.text = "Attack: " + playerBaseATK;
         armorText.text = "Armor: " + playerBaseArmor;
 
-        enemy = GameObject.Find("Gegner");
-        spieler = GameObject.Find("Player");
-        es = GetComponent<EnemyStats>();
+        enemy = GameObject.FindGameObjectWithTag("Gegner");
+        spieler = GameObject.FindGameObjectWithTag("Player");
+        es = enemy.GetComponent<EnemyStats>();
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         if (enemy.transform.position.x - spieler.transform.position.x >= -abstand && enemy.transform.position.x - spieler.transform.position.x <= abstand)
         {
 
@@ -61,7 +63,12 @@ public class PlayerStats : MonoBehaviour {
             }
         }
 
-                //TEST -> funktioniert
+        if (Input.GetMouseButtonDown(0))
+        {
+            Attacking();
+        }
+
+        //TEST -> funktioniert
         if (Input.GetKeyDown(KeyCode.F))
         {
             TakeDMG(1);
@@ -82,41 +89,30 @@ public class PlayerStats : MonoBehaviour {
 
     }
 
-    void TakeDMG (int dmg)
+    void TakeDMG(int dmg)
     {
+        Debug.Log("PLAYERDMG");
         playerCurrentHP -= dmg;
         //Evtl noch Lifebar Update
         hpText.text = "Hitpoints: " + playerCurrentHP;
         //Knockback
         Vector3 direction = (spieler.transform.position - enemy.transform.position).normalized;
-        spieler.GetComponent<Rigidbody>().AddForce(direction * 50, ForceMode.Impulse);
+        spieler.GetComponent<Rigidbody>().AddForce(direction * 30, ForceMode.Impulse);
         //Neustart wenn weniger als Null HP
         if (playerCurrentHP <= 0) Application.LoadLevel(scene.name);
     }
 
-    public void NewArmor (int armor)
+    void NewArmor(int armor)
     {
         playerCurrentArmor = playerBaseArmor + armor;
         armorText.text = "Armor: " + playerCurrentArmor;
 
     }
 
-   public void NewSword(int swordATK)
+    void NewSword(int swordATK)
     {
         playerCurrentATK = playerBaseATK + swordATK;
         atkText.text = "Attack: " + playerCurrentATK;
-    }
-
-    public void NewHP(int playerHP)
-    {
-        playerCurrentHP = playerHP;
-        hpText.text = "Hitpoints: " + playerCurrentHP;
-    }
-
-    void spawnGate()
-    {
-        Vector3 pos = new Vector3(enemy.transform.position.x + 1, 6.0f, enemy.transform.position.z - 1);
-        Instantiate(Gate, pos, Quaternion.identity);
     }
 
     void OnCollisionEnter(Collision col)
@@ -134,44 +130,12 @@ public class PlayerStats : MonoBehaviour {
 
             Debug.Log("Schwert");
             Destroy(GameObject.Find("Sword"));
-
-            NewSword(1);
-
-
             NewSword(Random.Range(1, 10));
-
-        }
-        else if (col.gameObject.name == "GateKey")
-        {
-
-            Debug.Log("GateKey");
-            Destroy(GameObject.Find("GateKey"));
-
-            Vector3 pos = new Vector3(Random.Range(-30, 30), posYGate, Random.Range(-30, 30));
-            Instantiate(Gate, pos, Quaternion.identity);
-
-
-
         }
     }
 
-    public int currArmor()
+    void Attacking()
     {
-
-        return playerCurrentArmor;
-    }
-
-
-    public int currHP()
-    {
-
-        return playerCurrentHP;
-    }
-
-
-    public int currAttack()
-    {
-
-        return playerCurrentATK;
+        Debug.Log("Geht in Attacking");        
     }
 }
