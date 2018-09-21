@@ -817,6 +817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2132439025}
+  Gate: {fileID: 1840948798392006, guid: c70adb71a4eb3fb45adbf45cb1598c25, type: 2}
   abstand: 4
   hpText: {fileID: 1747568892}
   atkText: {fileID: 515371007}
@@ -1088,7 +1089,7 @@ GameObject:
   - component: {fileID: 759923812}
   - component: {fileID: 759923807}
   - component: {fileID: 759923808}
-  - component: {fileID: 759923814}
+  - component: {fileID: 759923816}
   - component: {fileID: 759923815}
   m_Layer: 0
   m_Name: Player
@@ -1121,6 +1122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2132439025}
+  Gate: {fileID: 1840948798392006, guid: c70adb71a4eb3fb45adbf45cb1598c25, type: 2}
   abstand: 4
   hpText: {fileID: 1747568892}
   atkText: {fileID: 515371007}
@@ -1211,17 +1213,6 @@ MonoBehaviour:
   doubleJump: 1
   updates: 0.5
   JumpVector: {x: 0, y: 10, z: 0}
---- !u!114 &759923814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 759923806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f18b22a9f8f829b40b4c99309e0b8df8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &759923815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1234,11 +1225,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 759923806}
-  enemy: {fileID: 0}
+  enemy: {fileID: 2132439025}
   firstStart: 1
   enemyCurrentHP: 0
   Armor: {fileID: 1124471411893594, guid: bdff2d6712e274741a813bf536aa4500, type: 2}
   Swoard: {fileID: 1223136459667318, guid: 518dbaffb298d414e8057e919fdae94c, type: 2}
+  GateKey: {fileID: 1020089425450844, guid: badceb33faa31674c8f525af9c2cccf5, type: 2}
+--- !u!114 &759923816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 759923806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e6fdd6111fdac479a54729bedd068d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 759923806}
 --- !u!1 &811604789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,6 +1773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2132439025}
+  Gate: {fileID: 1840948798392006, guid: c70adb71a4eb3fb45adbf45cb1598c25, type: 2}
   abstand: 4
   hpText: {fileID: 1747568892}
   atkText: {fileID: 515371007}
@@ -1993,6 +1998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2132439025}
+  Gate: {fileID: 1840948798392006, guid: c70adb71a4eb3fb45adbf45cb1598c25, type: 2}
   abstand: 4
   hpText: {fileID: 1747568892}
   atkText: {fileID: 515371007}
@@ -2497,7 +2503,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2132439025}
   serializedVersion: 2
-  m_Mass: 8900
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -2522,3 +2528,4 @@ MonoBehaviour:
   enemyCurrentHP: 0
   Armor: {fileID: 1124471411893594, guid: bdff2d6712e274741a813bf536aa4500, type: 2}
   Swoard: {fileID: 1223136459667318, guid: 518dbaffb298d414e8057e919fdae94c, type: 2}
+  GateKey: {fileID: 1020089425450844, guid: badceb33faa31674c8f525af9c2cccf5, type: 2}
