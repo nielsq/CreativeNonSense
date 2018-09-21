@@ -76,7 +76,7 @@ public class PlayerStats : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            Debug.Log("Warum 2 mal");
+            Debug.Log("Warum 2 mal GetKeyDown X" + this.name);
             es.EnemyTakeDMG(playerCurrentATK);
         }
 

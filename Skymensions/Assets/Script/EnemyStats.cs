@@ -59,7 +59,7 @@ public class EnemyStats : MonoBehaviour
 
     public void EnemyTakeDMG(int dmg)
     {
-        Debug.Log("ASIDBIUBGIBERGIHBWGIHBEGHI");
+        Debug.Log("ENEMYDMG");
         enemyCurrentHP -= dmg;
         //Evtl noch Lifebar Update
         //Knockback
