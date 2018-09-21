@@ -29,8 +29,6 @@ public class EnemyStats : MonoBehaviour
     void Start () {
         enemyCurrentHP = enemyBaseHP;
         enemy = GameObject.Find("Gegner");
-        spawnSwoard();
-            spawnArmor();
     }
 	
 	// Update is called once per frame
