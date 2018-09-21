@@ -6,6 +6,7 @@ public class EnemyStats : MonoBehaviour
 {
     public GameObject player;
     public GameObject enemy;
+    public bool firstStart = true;
     
     //Anfangswerte
     private int enemyBaseHP = 4;
@@ -20,6 +21,7 @@ public class EnemyStats : MonoBehaviour
 
     public GameObject Armor;
     public GameObject Swoard;
+    public GameObject GateKey;
 
     //playerLevel skaliert mit den Stats der Gegner. Attack = base + playerLevel oder + playerLevel*0.x
     //RNG um Gegener Art zu ermitteln (Random Number 1 = Spinne, 2 = Bär... etc.)
@@ -29,6 +31,7 @@ public class EnemyStats : MonoBehaviour
         enemyCurrentHP = enemyBaseHP;
         enemy = GameObject.FindGameObjectWithTag("Gegner");
         player = GameObject.FindGameObjectWithTag("Player");
+        enemy = GameObject.Find("Gegner");
     }
 	
 	// Update is called once per frame
@@ -41,7 +44,10 @@ public class EnemyStats : MonoBehaviour
             EnemyTakeDMG(1);
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SpawnEnemy();
+        }
 
     }
 
@@ -57,6 +63,12 @@ public class EnemyStats : MonoBehaviour
         Instantiate(Swoard, pos, Quaternion.identity);
     }
 
+    public void spawnGateKey()
+    {
+        Vector3 pos = new Vector3(enemy.transform.position.x + 1, 6.0f, enemy.transform.position.z -1);
+        Instantiate(GateKey, pos, Quaternion.identity);
+    }
+
     public void EnemyTakeDMG(int dmg)
     {
         Debug.Log("ENEMYDMG");
@@ -69,10 +81,16 @@ public class EnemyStats : MonoBehaviour
         {
             spawnArmor();
             spawnSwoard();
+            spawnGateKey();
             Destroy(enemy);
         }
     }
 
+    void SpawnEnemy()
+    {
+        Vector3 pos = new Vector3(-3, 7.55f, 23.4f);
+        enemy = (GameObject)Instantiate(enemy, pos, Quaternion.identity);
+    }
 
 
 
