@@ -7,6 +7,7 @@ public class PlayerAttack : PlayerStats {
     public float swordSpeed = 2f;
     bool attack = false;
     bool swordback = false;
+    bool justAttacking = false;
     public PlayerStats ps;
 	// Use this for initialization
 	void Start () {
@@ -31,7 +32,7 @@ public class PlayerAttack : PlayerStats {
 
         if (Input.GetMouseButtonDown(0))
         {
-            StartCoroutine(SomeCoroutine());
+            if (attack == false && swordback == false) StartCoroutine(SomeCoroutine());
         }
 		
 	}
@@ -50,8 +51,8 @@ public class PlayerAttack : PlayerStats {
         Debug.Log("SomeCoroutine");
         attack = true;
         yield return new WaitForSeconds(0.5f);
-        attack = false;
         swordback = true;
+        attack = false;
         yield return new WaitForSeconds(0.5f);
         swordback = false;
     }
