@@ -52,6 +52,7 @@ public class PlayerStats : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        if(enemy != null && spieler != null) { 
         if (enemy.transform.position.x - spieler.transform.position.x >= -abstand && enemy.transform.position.x - spieler.transform.position.x <= abstand)
         {
 
@@ -78,7 +79,7 @@ public class PlayerStats : MonoBehaviour {
             es.spawnArmor();
             //NewArmor(Random.Range(1,30));
         }
-
+        }
     }
 
     void TakeDMG (int dmg)

@@ -72,6 +72,7 @@ public class EnemyStats : MonoBehaviour
         enemyCurrentHP -= dmg;
         //Evtl noch Lifebar Update
         //Knockback
+    if(enemy != null) {
         Vector3 direction = (enemy.transform.position - player.transform.position).normalized;
         enemy.GetComponent<Rigidbody>().AddForce(direction * 50, ForceMode.Impulse);
         if (enemyCurrentHP <= 0)
@@ -80,6 +81,7 @@ public class EnemyStats : MonoBehaviour
             spawnSwoard();
             spawnGateKey();
             Destroy(enemy);
+        }
         }
     }
 
