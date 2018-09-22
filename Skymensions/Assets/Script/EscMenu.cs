@@ -12,6 +12,10 @@ public class EscMenu : MonoBehaviour {
 
     public GameObject enemy;
     public GameObject Player;
+
+    private static int currHP = 10;
+    private static int currATk = 2;
+    private static int currAr = 0;
     // Update is called once per frame
     void Update () {
 		if(Input.GetKeyDown(KeyCode.Escape))
@@ -30,9 +34,11 @@ public class EscMenu : MonoBehaviour {
     {
         enemy = GameObject.Find("Gegner");
         //Player = GameObject.Find("Player");
-        enemy.GetComponent<KI>().speed = 1.1f;
-        Debug.Log(enemy.GetComponent<KI>().speed);
-
+        if (enemy != null)
+        {
+            enemy.GetComponent<KI>().speed = 1.1f;
+            Debug.Log(enemy.GetComponent<KI>().speed);
+        }
         Player.GetComponent<Movement>().speed = 0.3f;
         escMenuUI.SetActive(false);
         Time.timeScale = 1f;
@@ -43,29 +49,38 @@ public class EscMenu : MonoBehaviour {
     {
         enemy = GameObject.Find("Gegner");
         //Player = GameObject.Find("Player");
+        if(enemy != null) { 
         enemy.GetComponent<KI>().speed = 0.0f;
         Debug.Log(enemy.GetComponent<KI>().speed);
-
+        }
         Player.GetComponent<Movement>().speed = 0.0f;
         escMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+       
     }
 
     public void LoadMenu()
     {
         enemy = GameObject.Find("Gegner");
-        enemy.GetComponent<KI>().speed = 1.1f;
+        if (enemy != null)
+        {
+            enemy.GetComponent<KI>().speed = 1.1f;
+        }
         Player.GetComponent<Movement>().speed = 0.3f;
+        Player.GetComponent<PlayerStats>().resetStats(currAr, currATk, currHP);
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+       
     }
 
     public void QuitGame()
     {
         enemy = GameObject.Find("Gegner");
         enemy.GetComponent<KI>().speed = 1.1f;
-        Player.GetComponent<Movement>().speed = 0.3f;
+    
+    Player.GetComponent<Movement>().speed = 0.3f;
+        Player.GetComponent<PlayerStats>().resetStats(currAr, currATk, currHP);
         Debug.Log("Quit Game");
         Application.Quit();
      

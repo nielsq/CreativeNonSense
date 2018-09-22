@@ -95,7 +95,14 @@ public class PlayerStats : MonoBehaviour {
         Vector3 direction = (spieler.transform.position - enemy.transform.position).normalized;
         spieler.GetComponent<Rigidbody>().AddForce(direction * 50, ForceMode.Impulse);
         //Neustart wenn weniger als Null HP
-        if (playerCurrentHP <= 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); ;
+        if (playerCurrentHP <= 0)
+        {
+            playerBaseHP = 10;
+            playerBaseATK = 2;
+            playerBaseArmor = 0;
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); ;
+
+        }
     }
 
     public void NewArmor (int armor)
@@ -184,6 +191,15 @@ public class PlayerStats : MonoBehaviour {
         playerBaseHP = playerHP;
         playerBaseATK = playerBaseATK + swordATK;
         playerBaseArmor = playerBaseArmor + armor;
+        Debug.Log("Neue Stats: " + playerBaseHP + playerBaseATK + playerBaseArmor);
+        Start();
+    }
+
+    public void resetStats(int armor, int swordATK, int playerHP)
+    {
+        playerBaseHP = playerHP;
+        playerBaseATK = swordATK;
+        playerBaseArmor = armor;
         Debug.Log("Neue Stats: " + playerBaseHP + playerBaseATK + playerBaseArmor);
         Start();
     }
