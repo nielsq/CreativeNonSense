@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : PlayerStats {
+public class PlayerAttack : MonoBehaviour {
 
     public float swordSpeed = 2f;
     bool attack = false;
@@ -41,13 +41,18 @@ public class PlayerAttack : PlayerStats {
     {
         if (coll.gameObject.tag == "Gegner")
         {
-            Debug.Log("ENEMY HIT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            es.EnemyTakeDMG(2);
+            if ((attack == true || swordback == true) && justAttacking == true)
+            {
+                justAttacking = false;
+                Debug.Log("ENEMY HIT!");
+                ps.playerAttack;
+            }
         }
     }
 
     private IEnumerator SomeCoroutine()
     {
+        justAttacking = true;
         Debug.Log("SomeCoroutine");
         attack = true;
         yield return new WaitForSeconds(0.5f);
@@ -55,5 +60,6 @@ public class PlayerAttack : PlayerStats {
         attack = false;
         yield return new WaitForSeconds(0.5f);
         swordback = false;
+        justAttacking = false;
     }
 }

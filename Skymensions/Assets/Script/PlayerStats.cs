@@ -56,33 +56,33 @@ public class PlayerStats : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         if(enemy != null && spieler != null) { 
-        if (enemy.transform.position.x - spieler.transform.position.x >= -abstand && enemy.transform.position.x - spieler.transform.position.x <= abstand)
-        {
+            if (enemy.transform.position.x - spieler.transform.position.x >= -abstand && enemy.transform.position.x - spieler.transform.position.x <= abstand)
+            {
 
-            if (enemy.transform.position.z - spieler.transform.position.z >= -abstand && enemy.transform.position.z - spieler.transform.position.z <= abstand)
+                if (enemy.transform.position.z - spieler.transform.position.z >= -abstand && enemy.transform.position.z - spieler.transform.position.z <= abstand)
+                {
+                    TakeDMG(es.enemyCurrentATK);
+                }
+            }
+
+                    //TEST -> funktioniert
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 TakeDMG(1);
             }
-        }
+            // TEST -> funktioniert
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                es.EnemyTakeDMG(playerCurrentATK);
+                Debug.Log("ENEMY DMG");
+            }
 
-                //TEST -> funktioniert
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            TakeDMG(1);
-        }
-
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            es.EnemyTakeDMG(playerCurrentATK);
-            Debug.Log("ENEMY DMG");
-        }
-
-        //TEST 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            es.spawnArmor();
-            //NewArmor(Random.Range(1,30));
-        }
+            //TEST 
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                es.spawnArmor();
+                //NewArmor(Random.Range(1,30));
+            }
         }
     }
 
@@ -93,9 +93,15 @@ public class PlayerStats : MonoBehaviour {
         hpText.text = "Hitpoints: " + playerCurrentHP;
         //Knockback
         Vector3 direction = (spieler.transform.position - enemy.transform.position).normalized;
-        spieler.GetComponent<Rigidbody>().AddForce(direction * 50, ForceMode.Impulse);
+        spieler.GetComponent<Rigidbody>().AddForce(direction * 20, ForceMode.Impulse);
         //Neustart wenn weniger als Null HP
         if (playerCurrentHP <= 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); ;
+    }
+
+    public void playerAttack()
+    {
+        Debug.Log("PlayerStats - Attack");
+        es.EnemyTakeDMG(playerCurrentATK);
     }
 
     public void NewArmor (int armor)
