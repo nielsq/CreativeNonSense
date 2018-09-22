@@ -45,7 +45,7 @@ public class PlayerAttack : MonoBehaviour {
             {
                 justAttacking = false;
                 Debug.Log("ENEMY HIT!");
-                ps.playerAttack;
+                ps.playerAttack();
             }
         }
     }

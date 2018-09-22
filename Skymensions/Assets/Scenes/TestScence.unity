@@ -950,7 +950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f187b02f8641f1b41a144d08a78dfd85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 759923806}
+  Player: {fileID: 0}
 --- !u!1 &759923806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,6 +1106,7 @@ MonoBehaviour:
   enemy: {fileID: 2132439025}
   firstStart: 1
   enemyCurrentHP: 0
+  enemyCurrentATK: 0
   Armor: {fileID: 1124471411893594, guid: bdff2d6712e274741a813bf536aa4500, type: 2}
   Swoard: {fileID: 1223136459667318, guid: 518dbaffb298d414e8057e919fdae94c, type: 2}
   GateKey: {fileID: 1020089425450844, guid: badceb33faa31674c8f525af9c2cccf5, type: 2}
@@ -1117,9 +1118,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 759923806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e6fdd6111fdac479a54729bedd068d, type: 3}
+  m_Script: {fileID: 11500000, guid: d89657d8811eabf418c1daba3209d13b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordSpeed: 2
+  ps: {fileID: 0}
 --- !u!1 &811604789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2254,14 +2257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d89657d8811eabf418c1daba3209d13b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  Gate: {fileID: 0}
-  abstand: 4
-  es: {fileID: 0}
-  playerCurrentATK: 0
-  hpText: {fileID: 0}
-  atkText: {fileID: 0}
-  armorText: {fileID: 0}
   swordSpeed: 2
   ps: {fileID: 0}
 --- !u!1 &2063471382
@@ -2576,6 +2571,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   firstStart: 1
   enemyCurrentHP: 0
+  enemyCurrentATK: 0
   Armor: {fileID: 1124471411893594, guid: bdff2d6712e274741a813bf536aa4500, type: 2}
   Swoard: {fileID: 1223136459667318, guid: 518dbaffb298d414e8057e919fdae94c, type: 2}
   GateKey: {fileID: 1020089425450844, guid: badceb33faa31674c8f525af9c2cccf5, type: 2}
