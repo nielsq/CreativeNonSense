@@ -10,19 +10,20 @@ public class PlayerStats : MonoBehaviour {
     public GameObject enemy;
     public GameObject Gate;
     private GameObject spieler;
+    private GameObject spike;
     public int abstand = 4;
-    EnemyStats es;
+    public EnemyStats es;
+
+    bool attack = false;
     //Anfangswerte
     private int playerBaseHP = 10;
     private int playerBaseATK = 2;
     private int playerBaseArmor = 0;
-
     //Aktualisierte Werte
     private int playerCurrentHP;
     private int playerMaxHP;
-    private int playerCurrentATK;
+    public int playerCurrentATK;
     private int playerCurrentArmor;
-
     //Fuer das UI
     public Text hpText;
     public Text atkText;
@@ -47,7 +48,9 @@ public class PlayerStats : MonoBehaviour {
 
         enemy = GameObject.Find("Gegner");
         spieler = GameObject.Find("Player");
+        spike = GameObject.Find("spike");
         es = GetComponent<EnemyStats>();
+
     }
 
     // Update is called once per frame
@@ -71,6 +74,7 @@ public class PlayerStats : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.X))
         {
             es.EnemyTakeDMG(playerCurrentATK);
+            Debug.Log("ENEMY DMG");
         }
 
         //TEST 
