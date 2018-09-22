@@ -95,7 +95,7 @@ public class PlayerStats : MonoBehaviour {
         Vector3 direction = (spieler.transform.position - enemy.transform.position).normalized;
         spieler.GetComponent<Rigidbody>().AddForce(direction * 50, ForceMode.Impulse);
         //Neustart wenn weniger als Null HP
-        if (playerCurrentHP <= 0) Application.LoadLevel(scene.name);
+        if (playerCurrentHP <= 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); ;
     }
 
     public void NewArmor (int armor)

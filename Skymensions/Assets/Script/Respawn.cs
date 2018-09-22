@@ -21,7 +21,7 @@ public class Respawn : MonoBehaviour {
         if (other.tag == "Player")
         {
             Debug.Log("Respawnen!!!");
-            Application.LoadLevel(scene.name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         }
     }
