@@ -794,6 +794,8 @@ MonoBehaviour:
   enemy: {fileID: 2132439025}
   Gate: {fileID: 1840948798392006, guid: c70adb71a4eb3fb45adbf45cb1598c25, type: 2}
   abstand: 4
+  es: {fileID: 0}
+  playerCurrentATK: 0
   hpText: {fileID: 1747568892}
   atkText: {fileID: 515371007}
   armorText: {fileID: 1406283738}
@@ -997,6 +999,8 @@ MonoBehaviour:
   enemy: {fileID: 2132439025}
   Gate: {fileID: 1840948798392006, guid: c70adb71a4eb3fb45adbf45cb1598c25, type: 2}
   abstand: 4
+  es: {fileID: 0}
+  playerCurrentATK: 0
   hpText: {fileID: 1747568892}
   atkText: {fileID: 515371007}
   armorText: {fileID: 1406283738}
@@ -1466,7 +1470,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 971d82b5bb1209846a24a20231143162, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.04
+      value: -0.847
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 971d82b5bb1209846a24a20231143162, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1474,7 +1478,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 971d82b5bb1209846a24a20231143162, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.4666667
+      value: -0.47784
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 971d82b5bb1209846a24a20231143162, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1498,7 +1502,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 971d82b5bb1209846a24a20231143162, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.13333341
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 971d82b5bb1209846a24a20231143162, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1514,11 +1518,15 @@ Prefab:
       objectReference: {fileID: 2100000, guid: b13232d47d02f2244addc24f53048b36, type: 2}
     - target: {fileID: 400000, guid: 971d82b5bb1209846a24a20231143162, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.13333334
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 971d82b5bb1209846a24a20231143162, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.13333341
+      value: 0.10845598
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 971d82b5bb1209846a24a20231143162, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 971d82b5bb1209846a24a20231143162, type: 3}
@@ -1644,6 +1652,8 @@ MonoBehaviour:
   enemy: {fileID: 2132439025}
   Gate: {fileID: 1840948798392006, guid: c70adb71a4eb3fb45adbf45cb1598c25, type: 2}
   abstand: 4
+  es: {fileID: 0}
+  playerCurrentATK: 0
   hpText: {fileID: 1747568892}
   atkText: {fileID: 515371007}
   armorText: {fileID: 1406283738}
@@ -1915,6 +1925,8 @@ MonoBehaviour:
   enemy: {fileID: 2132439025}
   Gate: {fileID: 1840948798392006, guid: c70adb71a4eb3fb45adbf45cb1598c25, type: 2}
   abstand: 4
+  es: {fileID: 0}
+  playerCurrentATK: 0
   hpText: {fileID: 1747568892}
   atkText: {fileID: 515371007}
   armorText: {fileID: 1406283738}
@@ -2215,6 +2227,43 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1860922398}
+--- !u!1 &1862647397 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 971d82b5bb1209846a24a20231143162, type: 3}
+  m_PrefabInternal: {fileID: 1384343052}
+--- !u!65 &1862647400
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1862647397}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2600005, y: 5.628639, z: 2.2704194}
+  m_Center: {x: -0.0000020861626, y: -1.1693187, z: -0.0052097444}
+--- !u!114 &1862647401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1862647397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89657d8811eabf418c1daba3209d13b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  Gate: {fileID: 0}
+  abstand: 4
+  es: {fileID: 0}
+  playerCurrentATK: 0
+  hpText: {fileID: 0}
+  atkText: {fileID: 0}
+  armorText: {fileID: 0}
+  swordSpeed: 2
+  ps: {fileID: 0}
 --- !u!1 &2063471382
 GameObject:
   m_ObjectHideFlags: 0
