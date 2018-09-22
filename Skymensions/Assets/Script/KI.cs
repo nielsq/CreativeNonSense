@@ -42,7 +42,7 @@ public class KI : MonoBehaviour {
             if (this.transform.position.z - spieler.transform.position.z >= -abstand && this.transform.position.z - spieler.transform.position.z <= abstand)
             {
 
-
+                //in der nähe vom player
                 Debug.Log("ja");
 
 
@@ -70,7 +70,7 @@ public class KI : MonoBehaviour {
 
         if (Mathf.Round(spieler.transform.position.x * 10) / 10 > Mathf.Round(this.transform.position.x * 10) / 10 && notStuckZ)
         {
-          
+          //move along x
        
             this.transform.Translate(0.1f* speed, 0.0f, 0.0f);
 
@@ -82,7 +82,6 @@ public class KI : MonoBehaviour {
 
                 WeStockBoisX();
                 notStuckX = false;
-
             }
             else
             {
@@ -97,7 +96,7 @@ public class KI : MonoBehaviour {
 
         }
         else if (Mathf.Round(spieler.transform.position.x *10) /10 < Mathf.Round(this.transform.position.x * 10) / 10 && notStuckZ) {
-
+            //move along -x
 
             this.transform.Translate(-0.1f * speed, 0.0f, 0.0f);
 
@@ -128,6 +127,7 @@ public class KI : MonoBehaviour {
 
         if (Mathf.Round(spieler.transform.position.z * 10) / 10 > Mathf.Round(this.transform.position.z * 10) / 10 && notStuckX)
         {
+            //move along z
             this.transform.Translate(0.0f, 0.0f, 0.1f * speed);
 
             float temp = (Mathf.Round(this.transform.position.z* 10) / 10);
@@ -151,6 +151,7 @@ public class KI : MonoBehaviour {
         }
         else if (Mathf.Round(spieler.transform.position.z * 10) / 10 < Mathf.Round(this.transform.position.z * 10) / 10 && notStuckX)
         {
+            //move along -z
 
             this.transform.Translate(0.0f, 0.0f, -0.1f * speed);
 
@@ -182,9 +183,8 @@ public class KI : MonoBehaviour {
     void WeStockBoisX() {
         Debug.Log("X");
 
-        this.transform.Translate(0.0f, 0.0f, -0.1f * speed);
+        this.transform.Translate(0.0f, 0.0f, -0.2f * speed);
 
-        //check ob rechts oder links lieber
        
 
     }
@@ -193,28 +193,7 @@ public class KI : MonoBehaviour {
     {
         Debug.Log("Z");
 
-
-
-        if (links || this.transform.position.x > spieler.transform.position.x)
-        {
-            if (notStuckX)
-            {
-                links = true;
-                this.transform.Translate(-0.1f * speed, 0.0f, 0.0f);
-            }
-
-
-        }
-        else if (rechts || this.transform.position.x < spieler.transform.position.x)
-        {
-
-            if (notStuckX)
-            {
-                rechts = true;
-                this.transform.Translate(0.1f * speed, 0.0f, 0.0f);
-            }
-
-        }
+        this.transform.Translate(-0.2f * speed, 0.0f, 0.0f);
 
 
     }

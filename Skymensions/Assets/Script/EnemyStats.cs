@@ -89,7 +89,17 @@ public class EnemyStats : MonoBehaviour
         enemy = (GameObject)Instantiate(enemy, pos, Quaternion.identity);
     }
 
+    void OnCollisionEnter(Collision col)
+    {
+
+
+        if (col.gameObject.name == "spike")
+        {
+            Debug.Log("HIT");
+        }
+    }
 
 
 
-}
+
+ }
