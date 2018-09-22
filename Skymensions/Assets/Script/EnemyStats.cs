@@ -14,7 +14,7 @@ public class EnemyStats : MonoBehaviour
     private int enemyBaseArmor = 0;
 
     public int enemyCurrentHP;
-    private int enemyCurrentATK;
+    public int enemyCurrentATK;
     private int enemyCurrentArmor;
 
     private bool dead = false;
@@ -29,6 +29,7 @@ public class EnemyStats : MonoBehaviour
     // Use this for initialization
     void Start () {
         enemyCurrentHP = enemyBaseHP;
+        enemyCurrentATK = enemyBaseATK;
         enemy = GameObject.Find("Gegner");
     }
 	
@@ -69,19 +70,20 @@ public class EnemyStats : MonoBehaviour
 
     public void EnemyTakeDMG(int dmg)
     {
+        Debug.Log("Enemy Take DMG Function");
         enemyCurrentHP -= dmg;
         //Evtl noch Lifebar Update
         //Knockback
-    if(enemy != null) {
-        Vector3 direction = (enemy.transform.position - player.transform.position).normalized;
-        enemy.GetComponent<Rigidbody>().AddForce(direction * 50, ForceMode.Impulse);
-        if (enemyCurrentHP <= 0)
-        {
-            spawnArmor();
-            spawnSwoard();
-            spawnGateKey();
-            Destroy(enemy);
-        }
+        if(enemy != null) {
+            Vector3 direction = (enemy.transform.position - player.transform.position).normalized;
+            enemy.GetComponent<Rigidbody>().AddForce(direction * 50, ForceMode.Impulse);
+            if (enemyCurrentHP <= 0)
+            {
+                spawnArmor();
+                spawnSwoard();
+                spawnGateKey();
+                Destroy(enemy);
+            }
         }
     }
 
