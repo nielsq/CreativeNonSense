@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 public class Gate : MonoBehaviour {
     public GameObject Player;
 
-    private int playerCurrentHP;
-    private int playerCurrentATK;
-    private int playerCurrentArmor;
+    private static int currHP;
+    private static int currATk;
+    private static int currAr;
 
     private Scene scene;
 
@@ -29,9 +29,9 @@ public class Gate : MonoBehaviour {
 
             Debug.Log("New Level!!");
             Player = GameObject.FindGameObjectWithTag("Player");
-            playerCurrentArmor = Player.GetComponent<PlayerStats>().currArmor();
-            playerCurrentATK = Player.GetComponent<PlayerStats>().currAttack();
-            playerCurrentHP = Player.GetComponent<PlayerStats>().currHP();
+            currAr = Player.GetComponent<PlayerStats>().currArmor();
+            currATk = Player.GetComponent<PlayerStats>().currAttack();
+            currHP = Player.GetComponent<PlayerStats>().currHP();
 
             Player.GetComponent<PlayerStats>().newStats(currAr, currATk, currHP);
 
