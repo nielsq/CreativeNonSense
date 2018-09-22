@@ -35,6 +35,8 @@ public class KI : MonoBehaviour {
 	void Update () {
 
 
+        if (spieler.transform.position.y < 5) { } else { 
+
 
 
         if (this.transform.position.x - spieler.transform.position.x >= -abstand &&  this.transform.position.x - spieler.transform.position.x <= abstand) {
@@ -59,6 +61,8 @@ public class KI : MonoBehaviour {
         else
         {
             if (follow) { MoveToPlayer(); }
+        }
+
         }
 
 
