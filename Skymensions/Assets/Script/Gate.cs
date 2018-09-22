@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Gate : MonoBehaviour {
@@ -10,6 +11,9 @@ public class Gate : MonoBehaviour {
     private int playerCurrentATK;
     private int playerCurrentArmor;
 
+    private Scene scene;
+
+   
 
 
     void Start()
@@ -29,7 +33,7 @@ public class Gate : MonoBehaviour {
             playerCurrentATK = Player.GetComponent<PlayerStats>().currAttack();
             playerCurrentHP = Player.GetComponent<PlayerStats>().currHP();
 
-            Player.GetComponent<NewLvlStats>().NewLvl(playerCurrentArmor, playerCurrentATK, playerCurrentHP);
+            Player.GetComponent<PlayerStats>().newStats(currAr, currATk, currHP);
 
 
 

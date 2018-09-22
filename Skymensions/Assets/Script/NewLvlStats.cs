@@ -7,21 +7,21 @@ public class NewLvlStats : MonoBehaviour {
     private Scene scene;
 
     public GameObject Player;
+    private static int currAr;
+    private static int currATk;
+    private static int currHP;
 
-   
     // Use this for initialization
     public void NewLvl (int playerCurrentArmor, int playerCurrentATK ,int playerCurrentHP) {
         scene = SceneManager.GetActiveScene();
-
-        int currAr = playerCurrentArmor;
-        int currATk = playerCurrentATK;
-        int currHP = playerCurrentHP;
+        currAr = playerCurrentArmor;
+        currATk = playerCurrentATK;
+        currHP = playerCurrentHP;
         Application.LoadLevel(scene.name);
         Debug.Log("Jetzt die Stats anpassen");
         Player = GameObject.Find("spieler");
-        Player.GetComponent<PlayerStats>().NewArmor(currAr);
-        Player.GetComponent<PlayerStats>().NewSword(currATk);
-        Player.GetComponent<PlayerStats>().NewHP(currHP);
+        Player.GetComponent<PlayerStats>().newStats(currAr, currATk, currHP);
+        
 
     }
 

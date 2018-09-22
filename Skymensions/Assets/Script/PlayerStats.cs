@@ -16,9 +16,9 @@ public class PlayerStats : MonoBehaviour {
 
     bool attack = false;
     //Anfangswerte
-    private int playerBaseHP = 10;
-    private int playerBaseATK = 2;
-    private int playerBaseArmor = 0;
+    private static int playerBaseHP = 10;
+    private static int playerBaseATK = 2;
+    private static int playerBaseArmor = 0;
     //Aktualisierte Werte
     private int playerCurrentHP;
     private int playerMaxHP;
@@ -178,4 +178,14 @@ public class PlayerStats : MonoBehaviour {
 
         return playerCurrentATK;
     }
+
+    public void newStats(int armor, int swordATK, int playerHP)
+    {
+        playerBaseHP = playerHP;
+        playerBaseATK = playerBaseATK + swordATK;
+        playerBaseArmor = playerBaseArmor + armor;
+        Debug.Log("Neue Stats: " + playerBaseHP + playerBaseATK + playerBaseArmor);
+        Start();
+    }
+
 }
