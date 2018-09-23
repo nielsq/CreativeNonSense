@@ -12,6 +12,7 @@ public class EnemyStats : MonoBehaviour
     private int enemyBaseHP = 4;
     private int enemyBaseATK = 1;
     private int enemyBaseArmor = 0;
+    public int playerLevel = 1;
 
     public int enemyCurrentHP;
     public int enemyCurrentATK;
@@ -30,6 +31,12 @@ public class EnemyStats : MonoBehaviour
     void Start () {
         enemyCurrentHP = enemyBaseHP;
         enemyCurrentATK = enemyBaseATK;
+        if (playerLevel > 1)
+        {
+            enemyCurrentHP = enemyBaseHP + playerLevel * 2;
+            enemyCurrentArmor = Mathf.RoundToInt(enemyBaseArmor + playerLevel/2);
+            enemyCurrentATK = enemyBaseATK + playerLevel;
+        }
         enemy = GameObject.Find("Gegner");
     }
 	
@@ -71,7 +78,7 @@ public class EnemyStats : MonoBehaviour
     public void EnemyTakeDMG(int dmg)
     {
         Debug.Log("Enemy Take DMG Function");
-        enemyCurrentHP -= dmg;
+        if (dmg > enemyCurrentArmor) enemyCurrentHP -= (dmg - enemyCurrentArmor);
         //Evtl noch Lifebar Update
         //Knockback
         if(enemy != null) {
@@ -79,10 +86,11 @@ public class EnemyStats : MonoBehaviour
             enemy.GetComponent<Rigidbody>().AddForce(direction * 50, ForceMode.Impulse);
             if (enemyCurrentHP <= 0)
             {
-                spawnArmor();
-                spawnSwoard();
+                if (Random.Range(0, 100) > 50) spawnArmor();
+                if (Random.Range(0, 100) > 50) spawnSwoard();
                 spawnGateKey();
                 Destroy(enemy);
+                Debug.Log("Player Level: " + playerLevel);
             }
         }
     }

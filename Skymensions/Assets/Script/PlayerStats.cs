@@ -81,8 +81,9 @@ public class PlayerStats : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 es.spawnArmor();
-                //NewArmor(Random.Range(1,30));
             }
+
+            es.playerLevel = Mathf.RoundToInt((playerCurrentArmor + playerCurrentATK)/2);
         }
     }
 
@@ -100,7 +101,7 @@ public class PlayerStats : MonoBehaviour {
             playerBaseHP = 10;
             playerBaseATK = 2;
             playerBaseArmor = 0;
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); ;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); ;
 
         }
     }
@@ -115,6 +116,7 @@ public class PlayerStats : MonoBehaviour {
     {
         playerCurrentArmor = playerBaseArmor + armor;
         armorText.text = "Armor: " + playerCurrentArmor;
+        Debug.Log("New Armor: " + playerCurrentArmor);
 
     }
 
@@ -122,6 +124,7 @@ public class PlayerStats : MonoBehaviour {
     {
         playerCurrentATK = playerBaseATK + swordATK;
         atkText.text = "Attack: " + playerCurrentATK;
+        Debug.Log("New Sword: " + playerCurrentATK);
     }
 
     public void NewHP(int playerHP)
@@ -144,18 +147,16 @@ public class PlayerStats : MonoBehaviour {
         {
             Debug.Log("ArmorDrop");
             Destroy(GameObject.Find("ArmorDrop"));
-            NewArmor(Random.Range(1, 30));
+            if (Mathf.RoundToInt(es.playerLevel / 2) < 2) NewArmor(1);
+            else NewArmor(Mathf.RoundToInt(es.playerLevel/2));
         }
         else if (col.gameObject.name == "Sword")
         {
 
             Debug.Log("Schwert");
             Destroy(GameObject.Find("Sword"));
-
-            NewSword(1);
-
-
-            NewSword(Random.Range(1, 10));
+            if (Mathf.RoundToInt(es.playerLevel / 2) < 2) NewSword(1);
+            else NewSword(Mathf.RoundToInt(es.playerLevel/2));
 
         }
         else if (col.gameObject.name == "GateKey")
@@ -166,9 +167,6 @@ public class PlayerStats : MonoBehaviour {
 
             Vector3 pos = new Vector3(Random.Range(-30, 30), posYGate, Random.Range(-30, 30));
             Instantiate(Gate, pos, Quaternion.identity);
-
-
-
         }
     }
 
@@ -195,8 +193,8 @@ public class PlayerStats : MonoBehaviour {
     public void newStats(int armor, int swordATK, int playerHP)
     {
         playerBaseHP = playerHP;
-        playerBaseATK = playerBaseATK + swordATK;
-        playerBaseArmor = playerBaseArmor + armor;
+        playerBaseATK = swordATK;
+        playerBaseArmor = armor;
         Debug.Log("Neue Stats: " + playerBaseHP + playerBaseATK + playerBaseArmor);
         Start();
     }
