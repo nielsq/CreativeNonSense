@@ -950,7 +950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f187b02f8641f1b41a144d08a78dfd85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 759923806}
 --- !u!1 &759923806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,6 +1105,7 @@ MonoBehaviour:
   player: {fileID: 759923806}
   enemy: {fileID: 2132439025}
   firstStart: 1
+  playerLevel: 1
   enemyCurrentHP: 0
   enemyCurrentATK: 0
   Armor: {fileID: 1124471411893594, guid: bdff2d6712e274741a813bf536aa4500, type: 2}
@@ -2570,6 +2571,7 @@ MonoBehaviour:
   player: {fileID: 759923806}
   enemy: {fileID: 0}
   firstStart: 1
+  playerLevel: 1
   enemyCurrentHP: 0
   enemyCurrentATK: 0
   Armor: {fileID: 1124471411893594, guid: bdff2d6712e274741a813bf536aa4500, type: 2}
