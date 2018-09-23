@@ -34,6 +34,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //https://answers.unity.com/questions/10615/rotate-objectweapon-towards-mouse-cursor-2d.html
         var mouse = Input.mousePosition;
         var screenPoint = Camera.main.WorldToScreenPoint(transform.localPosition);
         var offset = new Vector2(mouse.x - screenPoint.x, mouse.y - screenPoint.y);

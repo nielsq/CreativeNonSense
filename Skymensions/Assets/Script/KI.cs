@@ -43,19 +43,13 @@ public class KI : MonoBehaviour {
 
             if (this.transform.position.z - spieler.transform.position.z >= -abstand && this.transform.position.z - spieler.transform.position.z <= abstand)
             {
-
                 //in der nähe vom player
                 Debug.Log("ja");
-
-
             }
             else
             {
                 if (follow) { MoveToPlayer(); }
-
-                
             }
-
 
         }
         else
@@ -69,8 +63,6 @@ public class KI : MonoBehaviour {
     }
 
     void MoveToPlayer() {
-
-
 
         if (Mathf.Round(spieler.transform.position.x * 10) / 10 > Mathf.Round(this.transform.position.x * 10) / 10 && notStuckZ)
         {
