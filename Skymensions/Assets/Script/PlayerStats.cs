@@ -51,6 +51,8 @@ public class PlayerStats : MonoBehaviour {
         spike = GameObject.Find("spike");
         es = GetComponent<EnemyStats>();
 
+        es.playerLevel = playerCurrentATK + playerCurrentArmor; //Mathf.RoundToInt((playerCurrentArmor + playerCurrentATK)/2);
+
     }
 
     // Update is called once per frame
@@ -83,13 +85,13 @@ public class PlayerStats : MonoBehaviour {
                 es.spawnArmor();
             }
 
-            es.playerLevel = Mathf.RoundToInt((playerCurrentArmor + playerCurrentATK)/2);
+            es.playerLevel = playerCurrentATK + playerCurrentArmor; //Mathf.RoundToInt((playerCurrentArmor + playerCurrentATK)/2);
         }
     }
 
     void TakeDMG (int dmg)
     {
-        playerCurrentHP -= dmg;
+        if (dmg > playerCurrentArmor) playerCurrentHP -= (dmg - playerCurrentArmor);
         //Evtl noch Lifebar Update
         hpText.text = "Hitpoints: " + playerCurrentHP;
         //Knockback

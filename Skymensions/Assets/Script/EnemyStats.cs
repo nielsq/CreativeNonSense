@@ -31,12 +31,15 @@ public class EnemyStats : MonoBehaviour
     void Start () {
         enemyCurrentHP = enemyBaseHP;
         enemyCurrentATK = enemyBaseATK;
-        if (playerLevel > 1)
+        Debug.Log("Player Level Enemy Stats: " + playerLevel);
+        if (playerLevel > 2) 
         {
-            enemyCurrentHP = enemyBaseHP + playerLevel * 2;
+            Debug.Log("Gehst du hier rein?!");
+            enemyCurrentHP = Mathf.RoundToInt(enemyBaseHP + playerLevel/2);
             enemyCurrentArmor = Mathf.RoundToInt(enemyBaseArmor + playerLevel/2);
-            enemyCurrentATK = enemyBaseATK + playerLevel;
+            enemyCurrentATK = Mathf.RoundToInt(enemyBaseATK + playerLevel/2);
         }
+        Debug.Log("Enemy HP: " + enemyCurrentHP + " Enemy Armor: " + enemyCurrentArmor + " Enemy Attack: " + enemyCurrentATK);
         enemy = GameObject.Find("Gegner");
     }
 	
