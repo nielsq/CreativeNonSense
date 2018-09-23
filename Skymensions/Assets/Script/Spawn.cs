@@ -71,7 +71,6 @@ public class Spawn : MonoBehaviour {
         }
         Instantiate(rock, pos, Quaternion.Euler(0.0f, Random.Range(0.0f, 360.0f), 0.0f));
     }
-    
     //Waende an einer Random Position (auf der Flaeche) spawnen
     void spawnWall()
     {
@@ -81,9 +80,7 @@ public class Spawn : MonoBehaviour {
             pos = new Vector3(Random.Range(-30, 30), posYWall, Random.Range(-30, 30));
         }
         Instantiate(wall, pos, Quaternion.Euler(0.0f, Random.Range(0.0f, 360.0f), 0.0f));
-     
     }
-
     //Pilze an einer Random Position (auf der Flaeche) spawnen
     void spawnShroom()
     {
